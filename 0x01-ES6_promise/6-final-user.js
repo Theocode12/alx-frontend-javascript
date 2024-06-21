@@ -6,7 +6,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .then((results) => {
       const response = [];
       results.forEach((result) => {
-        response.push({ status: result.status, value: result.value || result.reason.message });
+        response.push({ status: result.status, value: result.value || `Error: ${result.reason.message}` });
       });
       return response;
     });
